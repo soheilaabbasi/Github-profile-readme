@@ -1,7 +1,10 @@
-{ name}
+{ name }
 
-{ twitter}
-{ linkedin}
-{ instagram}
-{ gmail }
- 
+{ twitter }
+{ linkedin }
+{ instagram }
+{ email }
+
+{ github_stats }
+
+{ tools }

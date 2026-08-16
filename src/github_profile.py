@@ -1,3 +1,6 @@
+from pathlib import Path
+
+
 def generate_profile(theme, **kwargs):
 
     # Read theme
@@ -6,14 +9,17 @@ def generate_profile(theme, **kwargs):
 
     # Replace placeholders with user input
     for item, value in kwargs.items():
-        with open(f"src/themes/{theme}/{item}.txt") as f:
+        item_path = Path(f"src/themes/{theme}/{item}.txt")
+        if not item_path.exists():
+            continue
+
+        with open(item_path) as f:
             profile_item = f.read()
 
 
-        profile_item = profile_item.replace(f"{{ value }}", value)
-        print(item, value, profile_item)
-        break
-        profile = profile.replace(f"{{{item}}}", value)
+        profile_item = profile_item.replace("{ value }", value)
+        #print(item, value, profile_item)
+        profile = profile.replace(f"{{ {item} }}", profile_item)
 
     return profile
 

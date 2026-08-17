@@ -1,4 +1,5 @@
 # Github Readme Generator
+![readme-logo.png](src/assets/readme-logo.png)
 Use this app to generate eye-catching profile README for your github account.
 
 ## How To Run?
